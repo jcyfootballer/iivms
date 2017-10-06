@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <common_config>
+    <emails>
+      <email><![CDATA[gaohh@fun.tv]]></email>
+      <email><![CDATA[liwh@fun.tv]]></email>
+    </emails>
+  </common_config>
+  <logs>
+    <ott>
+      <ottpv>
+        <log_detail>
+          <info>
+            <warn_ahead_days><![CDATA[3]]></warn_ahead_days>
+            <start_valid><![CDATA[20140601]]></start_valid>
+            <end_valid><![CDATA[20171231]]></end_valid>
+            <seperator><![CDATA[	]]></seperator>
+            <email><![CDATA[zhangqs@funshion.com]]></email>
+          </info>
+          <variables>
+            <hdfs_path><![CDATA[dw/logs/ott/origin/ottpv/1/<%date_hour%>]]></hdfs_path>
+          </variables>
+          <params>
+            <date_hour><![CDATA[yyyy/MM/dd/HH]]></date_hour>
+          </params>
+          <format>
+            <input>
+              <v1>
+                <field><![CDATA[url]]></field>
+                <field><![CDATA[referurl]]></field>
+              </v1>
+              <v2>
+                <field><![CDATA[url]]></field>
+                <field><![CDATA[referurl]]></field>
+                <field><![CDATA[channelid]]></field>
+              </v2>
+              <v3>
+                <field><![CDATA[url]]></field>
+                <field><![CDATA[referurl]]></field>
+                <field><![CDATA[channelid]]></field>
+                <field><![CDATA[vtime]]></field>
+              </v3>
+            </input>
+            <output>
+              <field><![CDATA[url]]></field>
+              <field><![CDATA[referurl]]></field>
+              <field><![CDATA[channelid]]></field>
+              <field><![CDATA[vtime]]></field>
+              <field><![CDATA[ext]]></field>
+            </output>
+          </format>
+        </log_detail>
+      </ottpv>
+    </ott>
+  </logs>
+</root>
