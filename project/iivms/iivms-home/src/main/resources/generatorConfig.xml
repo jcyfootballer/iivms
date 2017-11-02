@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+<generatorConfiguration>
+<classPathEntry location="F:\ProgramFiles\apache-maven-3.5.0\repository\mysql\mysql-connector-java\5.1.14\mysql-connector-java-5.1.14.jar" />
+  <context id="context1">
+    <jdbcConnection connectionURL="jdbc:mysql://192.168.1.23:3306/rail?useUnicode=true&amp;characterEncoding=utf-8" 
+    driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
+
+       <!-- 生成模型的包名和位置 -->  
+    <javaModelGenerator targetPackage="com.cars.iivmshome.sysmanage.model" targetProject="iivms-home">  
+            <property name="enableSubPackages" value="true" />  
+            <!-- <property name="trimStrings" value="true" />   -->
+     </javaModelGenerator>  
+      <!-- 生成的映射文件包名和位置 -->  
+        <sqlMapGenerator targetPackage="com.cars.iivmshome.sysmanage.mapxml" targetProject="iivms-home">  
+            <property name="enableSubPackages" value="true" />  
+        </sqlMapGenerator>  
+        <!-- 生成DAO的包名和位置 -->  
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.cars.iivmshome.sysmanage.dao" targetProject="iivms-home">  
+            <property name="enableSubPackages" value="true" />  
+        </javaClientGenerator>  
+       <table tableName="alarm_info" domainObjectName="AlarmInfoModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+       enableSelectByExample="false" selectByExampleQueryId="false" />
+         <table tableName="alarm_type" domainObjectName="AlarmTypeModel" enableCountByExample="false" enableUpdateByExample="false" enableDeleteByExample="false" 
+       enableSelectByExample="false" selectByExampleQueryId="false" />
+  </context>
+</generatorConfiguration>

@@ -1,0 +1,26 @@
+.holderpanel{
+   width:100%;
+   float :left;
+   padding:1px 1px 1px 1px ;
+   overflow:auto;
+   max-height:350px;
+}
+
+.holderpic{
+	background:#303133;
+	overflow:auto;
+    text-align: center;
+}
+
+.screen{
+	margin-top:2px;
+	overflow:auto;
+	text-align: center;
+}
+.camera_bottom{
+	background:#303133;
+	overflow:auto;
+    text-align: center;
+    max-height:100px;
+}
+

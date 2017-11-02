@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN" "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+<!-- 配置一些常量值 constant -->
+    <!-- 通常,struts2按如下搜索顺序加载struts2常量:
+        struts-default.xml
+        struts-plugin.xml
+        struts.xml
+        struts.properties
+        web.xml
+        如果在多个文件中配置了同一个常量,则后一个文件中配置的常量值会覆盖前面文件中配置的常量值.
+     -->
+	<!-- Constants -->
+	<constant name="struts.devMode" value="true" />
+	 <!-- 该属性指定需要Struts 2处理的请求后缀，该属性的默认值是action，即所有匹配*.action的请求都由Struts2处理
+        如果用户需要指定多个请求后缀，则多个后缀之间以英文逗号（,）隔开 -->
+	<constant name="struts.action.extension" value="htm" />
+	 <!-- 与spring集成时，指定由spring负责action对象的创建 -->
+	<constant name="struts.objectFactory" value="spring" />
+	<constant name="struts.objectFactory.spring.autoWire" value="name" />
+	<constant name="struts.objectFactory.spring.useClassCache" value="true" />
+	<constant name="struts.objectFactory.spring.autoWire.alwaysRespect" value="true" />
+	 <!-- 当struts的配置文件修改后,系统是否自动重新加载该文件,默认值为false(生产环境下使用),开发阶段最好打开 -->
+	<constant name="struts.configuration.xml.reload" value="true" />
+	 <!-- 指定默认编码集,作用于HttpServletRequest的setCharacterEncoding方法 和freemarker 、velocity的输出 -->
+	<constant name="struts.i18n.encoding" value="utf-8" />
+	<constant name="struts.tag.altSyntax" value="true" />
+	<constant name="struts.locale" value="zh_CN" />
+	<constant name="struts.custom.i18n.resources" value="Tom_Text" />
+	<constant name="struts.ognl.allowStaticMethodAccess" value="true" />
+	<constant name="struts.multipart.maxSize" value="1024000000" />
+	<constant name="struts.multipart.saveDir" value="/tmp" />
+	<constant name="struts.multipart.parser" value="jakarta" />
+	<constant name="struts.i18n.reload" value="false" />
+	<constant name="struts.serve.static" value="true" />
+	 <!-- 设置浏览器是否缓存静态内容,默认值为true(生产环境下使用),开发阶段最好关闭 -->
+	<constant name="struts.serve.static.browserCache" value="false" />
+	<constant name="struts.freemarker.templatesCache" value="false" />
+	 <!-- 该属性设置Struts 2是否支持动态方法调用，该属性的默认值是true。如果需要关闭动态方法调用，则可设置该属性为false --> 
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	  <!-- 开发模式下使用,这样可以打印出更详细的错误信息 -->
+    <constant name="struts.devMode" value="true" />
+     <!-- 默认的视图主题 -->
+    <constant name="struts.ui.theme" value="simple" />
+    
+<!-- 	<constant name="struts2.sslplugin.httpPort" value="8080" />
+	<constant name="struts2.sslplugin.httpsPort" value="8443" />
+	<constant name="struts2.sslplugin.annotations" value="true" />
+	<constant name="struts.multipart.parser" value="cos" />
+	<constant name="struts.multipart.parser" value="pell" /> 
+
+    <include file="struts-default.xml" />  -->
+    <!-- 默认的配置包 -->  
+    <package name="defaultPackage" extends="struts-default,json-default,jfreechart-default,spring-default">  
+        <global-results>  
+            <!-- 公用返回页面 -->  
+            <result name="error" type="dispatcher">/WEB-INF/jsp/globle/error.ftl</result>  
+            <result name="login" type="dispatcher">/WEB-INF/jsp/globle/404.ftl</result>  
+            <result name="defaultLogin" type="redirect">/WEB-INF/jsp/globle/404.ftl</result>  
+            <result name="loginOut" type="redirect">/WEB-INF/jsp/globle/404.ftl</result>  
+            <result name="ajaxJson" type="json">  
+                <param name="contentType">text/html</param>  
+                <param name="root">ajax_json</param>  
+            </result>  
+            <!-- 异常返回页面 -->  
+            <result name="actionException" type="dispatcher">/WEB-INF/jsp/globle/404.ftl</result>  
+            <result name="serviceException" type="dispatcher">/WEB-INF/jsp/globle/404.ftl</result>  
+            <result name="daoException" type="dispatcher">/WEB-INF/jsp/globle/404.ftl</result>  
+            <result name="exception" type="dispatcher">/WEB-INF/jsp/globle/404.ftl</result>  
+        </global-results>  
+        <!-- 异常处理 -->  
+        <global-exception-mappings>  
+            <!-- Action 层异常处理 -->  
+            <!-- <exception-mapping result="actionException" exception="system.exception.ActionException" />  --> 
+            <!-- Service 层异常处理 -->  
+            <!-- <exception-mapping result="serviceException" exception="system.exception.ServiceException" />  --> 
+            <!-- DAO 层异常处理 -->  
+            <!-- <exception-mapping result="daoException" exception="system.exception.DaoException" />   -->
+            <!-- 未知的系统异常，后台没有对此信息进行归类 -->  
+            <exception-mapping result="exception" exception="java.lang.Exception" />  
+        </global-exception-mappings>  
+    </package>  
+      
+    <!-- Test by Tom 
+    <include file="struts/struts-user.xml" />-->  
+</struts>

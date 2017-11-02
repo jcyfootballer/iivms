@@ -1,0 +1,155 @@
+.ztree li span.button.home_ico_open{
+	margin-right: 2px;
+	background: url('../icons/home.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.home_ico_docu{
+	margin-right: 2px;
+	background: url('../icons/home.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.home_ico_close {
+	margin-right: 2px;
+	background: url('../icons/home.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+
+.ztree li span.button.db0_ico_open{
+	margin-right: 2px;
+	background: url('../icons/db.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.db0_ico_docu{
+	margin-right: 2px;
+	background: url('../icons/db.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.db0_ico_close {
+	margin-right: 2px;
+	background: url('../icons/db.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.db1_ico_open{
+	margin-right: 2px;
+	background: url('../icons/db1.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.db1_ico_docu{
+	margin-right: 2px;
+	background: url('../icons/db1.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.db1_ico_close {
+	margin-right: 2px;
+	background: url('../icons/db1.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.tabledm_ico_open {
+	margin-right: 2px;
+	background: url('../icons/tabledm.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.tabledm_ico_close {
+	margin-right: 2px;
+	background: url('../icons/tabledm.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.tablefact_ico_open {
+	margin-right: 2px;
+	background: url('../icons/tablefact.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.tablefact_ico_docu {
+	margin-right: 2px;
+	background: url('../icons/tablefact.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.tablefact_ico_close {
+	margin-right: 2px;
+	background: url('../icons/tablefact.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.tabletmp_ico_open {
+	margin-right: 2px;
+	background: url('../icons/tabletmp.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.tabletmp_ico_close {
+	margin-right: 2px;
+	background: url('../icons/tabletmp.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.table_ico_open {
+	margin-right: 2px;
+	background: url('../icons/table.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.table_ico_close {
+	margin-right: 2px;
+	background: url('../icons/table.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.table_ico_docu {
+	margin-right: 2px;
+	background: url('../icons/table.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.field_ico_open {
+	margin-right: 2px;
+	background: url('../icons/field.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.field_ico_close {
+	margin-right: 2px;
+	background: url('../icons/field.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+
+.ztree li span.button.field_ico_docu {
+	margin-right: 2px;
+	background: url('../icons/field.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.fielddm_ico_docu {
+	margin-right: 2px;
+	background: url('../icons/fielddm.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}
+.ztree li span.button.fieldfact_ico_docu {
+	margin-right: 2px;
+	background: url('../icons/fieldfact.png') no-repeat scroll 0 0
+		transparent;
+	vertical-align: top;
+}

@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title>空白页 - Bootstrap</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<!-- basic styles -->
+
+		<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
+		<link rel="stylesheet" href="assets/css/font-awesome.min.css" />
+
+		<!--[if IE 7]>
+		  <link rel="stylesheet" href="assets/css/font-awesome-ie7.min.css" />
+		<![endif]-->
+
+		<!-- page specific plugin styles -->
+
+		<!-- fonts -->
+
+		<link rel="stylesheet" href="assets/css/googleapis_fonts.css" />
+
+		<!-- ace styles -->
+
+		<link rel="stylesheet" href="assets/css/ace.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-rtl.min.css" />
+		<link rel="stylesheet" href="assets/css/ace-skins.min.css" />
+
+		<!--[if lte IE 8]>
+		  <link rel="stylesheet" href="assets/css/ace-ie.min.css" />
+		<![endif]-->
+
+		<!-- inline styles related to this page -->
+
+		<!-- ace settings handler -->
+
+		<script src="assets/js/ace-extra.min.js"></script>
+
+		<!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+		<!--[if lt IE 9]>
+		<script src="assets/js/html5shiv.js"></script>
+		<script src="assets/js/respond.min.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+		<div class="navbar navbar-default" id="navbar">
+			<script type="text/javascript">
+				try{ace.settings.check('navbar' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="navbar-container" id="navbar-container">
+				<div class="navbar-header pull-left">
+					<a href="index.html" class="navbar-brand">
+						<small>
+							<i class="icon-leaf"></i>
+							yoho调度系统
+						</small>
+					</a>
+				</div>
+			</div><!-- /.container -->
+		</div>
+
+		<div class="main-container" id="main-container">
+			<script type="text/javascript">
+				try{ace.settings.check('main-container' , 'fixed')}catch(e){}
+			</script>
+
+			<div class="main-container-inner">
+				<a class="menu-toggler" id="menu-toggler" href="#">
+					<span class="menu-text"></span>
+				</a>
+
+				<div class="sidebar" id="sidebar">
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'fixed')}catch(e){}
+					</script>
+
+					<ul class="nav nav-list">
+						<li class="active">
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text">Job管理</span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> Instance管理 </span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> 审核 </span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> 邮件组 </span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> 邮件联系人 </span>
+							</a>
+						</li>
+
+						<li>
+							<a href="index.html">
+								<i class="icon-dashboard"></i>
+								<span class="menu-text"> 配置 </span>
+							</a>
+						</li>
+						<li>
+                            <a href="index.html">
+                                <i class="icon-picture"></i>
+                                <span class="menu-text"> 相册 </span>
+                            </a>
+                        </li>
+
+					</ul><!-- /.nav-list -->
+
+					<div class="sidebar-collapse" id="sidebar-collapse">
+						<i class="icon-double-angle-left" data-icon1="icon-double-angle-left" data-icon2="icon-double-angle-right"></i>
+					</div>
+
+					<script type="text/javascript">
+						try{ace.settings.check('sidebar' , 'collapsed')}catch(e){}
+					</script>
+				</div>
+
+				<div class="main-content">
+
+					<div class="page-content">
+						<div class="row">
+							<div class="col-xs-12">
+								<!-- PAGE CONTENT BEGINS -->
+									<div class="table-header">
+										Job列表
+									</div>
+
+									<div class="table-responsive">
+										<table id="sample-table-2" class="table table-striped table-bordered table-hover">
+											<thead>
+												<tr>
+													<th class="center">
+														<label>
+															<input type="checkbox" class="ace" />
+															<span class="lbl"></span>
+														</label>
+													</th>
+													<th>Domain</th>
+													<th>Price</th>
+													<th class="hidden-480">Clicks</th>
+
+													<th>
+														<i class="icon-time bigger-110 hidden-480"></i>
+														Update
+													</th>
+													<th class="hidden-480">Status</th>
+
+													<th></th>
+												</tr>
+											</thead>
+
+											<tbody>
+												<tr>
+													<td class="center">
+														<label>
+															<input type="checkbox" class="ace" />
+															<span class="lbl"></span>
+														</label>
+													</td>
+
+													<td>
+														<a href="#">app.com</a>
+													</td>
+													<td>$45</td>
+													<td class="hidden-480">3,330</td>
+													<td>Feb 12</td>
+
+													<td class="hidden-480">
+														<span class="label label-sm label-warning">Expiring</span>
+													</td>
+
+													<td>
+														<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+															<a class="blue" href="#">
+																<i class="icon-zoom-in bigger-130"></i>
+															</a>
+
+															<a class="green" href="#">
+																<i class="icon-pencil bigger-130"></i>
+															</a>
+
+															<a class="red" href="#">
+																<i class="icon-trash bigger-130"></i>
+															</a>
+														</div>
+
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="inline position-relative">
+																<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
+																	<i class="icon-caret-down icon-only bigger-120"></i>
+																</button>
+
+																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+																	<li>
+																		<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																			<span class="blue">
+																				<i class="icon-zoom-in bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																	<li>
+																		<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																			<span class="green">
+																				<i class="icon-edit bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																	<li>
+																		<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																			<span class="red">
+																				<i class="icon-trash bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</td>
+												</tr>
+
+												<tr>
+													<td class="center">
+														<label>
+															<input type="checkbox" class="ace" />
+															<span class="lbl"></span>
+														</label>
+													</td>
+
+													<td>
+														<a href="#">base.com</a>
+													</td>
+													<td>$35</td>
+													<td class="hidden-480">2,595</td>
+													<td>Feb 18</td>
+
+													<td class="hidden-480">
+														<span class="label label-sm label-success">Registered</span>
+													</td>
+
+													<td>
+														<div class="visible-md visible-lg hidden-sm hidden-xs action-buttons">
+															<a class="blue" href="#">
+																<i class="icon-zoom-in bigger-130"></i>
+															</a>
+
+															<a class="green" href="#">
+																<i class="icon-pencil bigger-130"></i>
+															</a>
+
+															<a class="red" href="#">
+																<i class="icon-trash bigger-130"></i>
+															</a>
+														</div>
+
+														<div class="visible-xs visible-sm hidden-md hidden-lg">
+															<div class="inline position-relative">
+																<button class="btn btn-minier btn-yellow dropdown-toggle" data-toggle="dropdown">
+																	<i class="icon-caret-down icon-only bigger-120"></i>
+																</button>
+
+																<ul class="dropdown-menu dropdown-only-icon dropdown-yellow pull-right dropdown-caret dropdown-close">
+																	<li>
+																		<a href="#" class="tooltip-info" data-rel="tooltip" title="View">
+																			<span class="blue">
+																				<i class="icon-zoom-in bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																	<li>
+																		<a href="#" class="tooltip-success" data-rel="tooltip" title="Edit">
+																			<span class="green">
+																				<i class="icon-edit bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+
+																	<li>
+																		<a href="#" class="tooltip-error" data-rel="tooltip" title="Delete">
+																			<span class="red">
+																				<i class="icon-trash bigger-120"></i>
+																			</span>
+																		</a>
+																	</li>
+																</ul>
+															</div>
+														</div>
+													</td>
+												</tr>
+
+											</tbody>
+										</table>
+									</div>
+
+									<!-- 分页 -->
+									<div class="modal-footer no-margin-top">
+										<ul class="pagination pull-right no-margin">
+											<li class="prev disabled">
+												<a href="#">
+													<i class="icon-double-angle-left"></i>
+												</a>
+											</li>
+
+											<li class="active">
+												<a href="#">1</a>
+											</li>
+
+											<li>
+												<a href="#">2</a>
+											</li>
+
+											<li>
+												<a href="#">3</a>
+											</li>
+
+											<li class="next">
+												<a href="#">
+													<i class="icon-double-angle-right"></i>
+												</a>
+											</li>
+										</ul>
+									</div>
+								<!-- PAGE CONTENT ENDS -->
+							</div><!-- /.col -->
+						</div><!-- /.row -->
+					</div><!-- /.page-content -->
+				</div><!-- /.main-content -->
+
+			</div><!-- /.main-container-inner -->
+			
+
+		</div><!-- /.main-container -->
+
+		<!-- basic scripts -->
+
+		<!--[if !IE]> -->
+      <!--
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>-->
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+<![endif]-->
+
+		<!--[if !IE]> -->
+
+		<script type="text/javascript">
+			window.jQuery || document.write("<script src='assets/js/jquery-2.0.3.min.js'>"+"<"+"/script>");
+		</script>
+
+		<!-- <![endif]-->
+
+		<!--[if IE]>
+<script type="text/javascript">
+ window.jQuery || document.write("<script src='assets/js/jquery-1.10.2.min.js'>"+"<"+"/script>");
+</script>
+<![endif]-->
+
+		<script type="text/javascript">
+			if("ontouchend" in document) document.write("<script src='assets/js/jquery.mobile.custom.min.js'>"+"<"+"/script>");
+		</script>
+		<script src="assets/js/bootstrap.js"></script>
+		<script src="assets/js/typeahead-bs2.min.js"></script>
+
+		<!-- page specific plugin scripts -->
+		<!-- ace scripts -->
+
+		<script src="assets/js/ace-elements.min.js"></script>
+		<script src="assets/js/ace.js"></script>
+		
+		
+		<script src="assets/js/jquery-ui-1.10.3.custom.min.js"></script>
+		<script src="assets/js/jquery.ui.touch-punch.min.js"></script>
+		<script src="assets/js/jquery.slimscroll.min.js"></script>
+		<script src="assets/js/jquery.easy-pie-chart.min.js"></script>
+		<script src="assets/js/jquery.sparkline.min.js"></script>
+		<script src="assets/js/flot/jquery.flot.min.js"></script>
+		<script src="assets/js/flot/jquery.flot.pie.min.js"></script>
+		<script src="assets/js/flot/jquery.flot.resize.min.js"></script>
+		<!-- inline scripts related to this page -->
+		
+	<div style="display:none"><script src='http://v7.cnzz.com/stat.php?id=155540&web_id=155540' language='JavaScript' charset='gb2312'></script></div>
+</body>
+</html>

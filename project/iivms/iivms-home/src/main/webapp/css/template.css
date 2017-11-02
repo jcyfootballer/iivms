@@ -1,0 +1,11 @@
+
+.fun-run{
+	background:url('../images/home/run.png') no-repeat center center;
+}
+.fun-stop{
+	background:url('../images/home/stop.png') no-repeat center center;
+}
+
+.fun-save{
+	background:url(../images/home/save.png') no-repeat center center;
+}

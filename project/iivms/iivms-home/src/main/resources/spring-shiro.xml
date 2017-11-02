@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:p="http://www.springframework.org/schema/p"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:util="http://www.springframework.org/schema/util"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.0.xsd
+        http://www.springframework.org/schema/util
+        http://www.springframework.org/schema/util/spring-util-4.0.xsd        
+        ">
+	<description>Shiro 配置</description>
+	<context:component-scan base-package="com.cars.iivmshome" />
+
+	<bean id="shiroFilter" class="org.apache.shiro.spring.web.ShiroFilterFactoryBean">
+		<property name="securityManager" ref="securityManager" />
+		<property name="loginUrl" value="/main/index.do" />
+		<property name="successUrl" value="/main/login.do" />
+		<property name="unauthorizedUrl" value="jsp/globle/error.ftl" />
+		<property name="filters">    
+           <map>    
+               <entry key="execution" value-ref="executionContextFilter"/>  
+           </map>    
+       </property>    
+		<property name="filterChainDefinitions">
+			<value>
+			    /*.do=execution
+				/index.do = anon
+				/login.do = anon
+				/*.jsp* = authc
+				/*.do* = anon
+			</value>
+		</property>
+	</bean>
+    <bean id="executionContextFilter" class="com.cars.iivmshome.auth.security.ExecutionContextFilter"></bean>
+    <bean id="monitorRealm" class="com.cars.iivmshome.auth.security.MonitorRealm"></bean>
+     
+	<bean id="securityManager" class="org.apache.shiro.web.mgt.DefaultWebSecurityManager">
+		<!--设置自定义realm -->
+		<property name="realm" ref="monitorRealm" />
+	 
+		<property name="cacheManager" ref="cacheManager" />
+		<property name="sessionMode" value="native" />
+		<property name="sessionManager" ref="sessionManager" />
+	</bean>
+
+	<!-- securityManager -->
+	<bean
+		class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+		<property name="staticMethod"
+			value="org.apache.shiro.SecurityUtils.setSecurityManager" />
+		<property name="arguments" ref="securityManager" />
+	</bean>
+
+	<!-- Enable Shiro Annotations for Spring-configured beans. Only run after -->
+	<!-- the lifecycleBeanProcessor has run: -->
+	<bean id="lifecycleBeanPostProcessor" class="org.apache.shiro.spring.LifecycleBeanPostProcessor" />
+	<bean
+		class="org.springframework.aop.framework.autoproxy.DefaultAdvisorAutoProxyCreator"
+		depends-on="lifecycleBeanPostProcessor" />
+	<bean
+		class="org.apache.shiro.spring.security.interceptor.AuthorizationAttributeSourceAdvisor">
+		<property name="securityManager" ref="securityManager" />
+	</bean>
+
+	<bean id="sessionManager"
+		class="org.apache.shiro.web.session.mgt.DefaultWebSessionManager">
+		<property name="sessionDAO" ref="sessionDAO" />
+		<!-- <property name="sessionIdCookie" ref="simpleCookie"/> -->
+	</bean>
+	 <bean id="simpleCookie" class="org.apache.shiro.web.servlet.SimpleCookie">
+    <constructor-arg name="name" value="shiro.sesssion"/>
+    <property name="path" value="/"/>
+	 </bean>
+
+	<bean id="sessionDAO"
+		class="org.apache.shiro.session.mgt.eis.EnterpriseCacheSessionDAO">
+		<property name="activeSessionsCacheName" value="shiro-activeSessionCache" />
+	</bean>
+	
+	<bean id="cacheManager" class="org.apache.shiro.cache.ehcache.EhCacheManager">
+	   <property name="cacheManagerConfigFile" value="classpath:/ehcache/ehcache.xml"/>
+	</bean>
+	<!-- 用户授权信息Cache（本机内存实现） 
+    <bean id="memoryConstrainedCacheManager" class="org.apache.shiro.cache.MemoryConstrainedCacheManager" />     --> 
+	
+</beans>
+
