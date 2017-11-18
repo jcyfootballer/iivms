@@ -45,13 +45,13 @@
 }
 .ztree li span.button.db1_ico_docu{
 	margin-right: 2px;
-	background: url('../icons/db1.png') no-repeat scroll 0 0
+	background: url('../icons/db.png') no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 }
 .ztree li span.button.db1_ico_close {
 	margin-right: 2px;
-	background: url('../icons/db1.png') no-repeat scroll 0 0
+	background: url('../icons/db.png') no-repeat scroll 0 0
 		transparent;
 	vertical-align: top;
 }

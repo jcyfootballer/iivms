@@ -24,3 +24,132 @@
     max-height:100px;
 }
 
+.screenBtn{
+	overflow:auto;
+    text-align: center;
+    height:40px;
+	background:#303133;
+	margin-bottom: 1px;
+}
+
+.camera_nomusic{
+	background: url('../images/camera_nomusic.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_nomusic:hover{
+	 background-size: 80% 80%;
+}
+.camera_music{
+	background: url('../images/camera_music.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_music:hover{
+	 background-size: 80% 80%;
+}
+.camera_printscreen{
+	background: url('../images/camera_printscreen.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_printscreen:hover{
+	 background-size: 80% 80%;
+}
+.camera_video{
+	background: url('../images/camera_video.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_video:hover{
+	 background-size: 80% 80%;
+}
+.camera_stop{
+	background: url('../images/camera_stop.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_stop:hover{
+	 background-size: 80% 80%;
+}
+.camera_stopall{
+	background: url('../images/camera_stopall.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_stopall:hover{
+	 background-size: 80% 80%;
+}
+.camera_screen_1{
+	background: url('../images/camera_screen_1.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_screen_1:hover{
+	 background-size: 80% 80%;
+}
+.camera_screen_4{
+	background: url('../images/camera_screen_4.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_screen_4:hover{
+	 background-size: 80% 80%;
+}
+.camera_screen_6{
+	background: url('../images/camera_screen_6.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_screen_6:hover{
+	 background-size: 80% 80%;;
+}
+.camera_screen_9{
+	background: url('../images/camera_screen_9.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_screen_9:hover{
+	 background-size: 80% 80%;
+}
+.camera_screen_16{
+	background: url('../images/camera_screen_16.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+
+.camera_screen_16:hover{
+	background-size: 80% 80%;
+}
+.camera_screen_open{
+	background: url('../images/camera_screen_open.png') no-repeat scroll 0 0
+		transparent;
+	padding-top:82.35%;
+    background-position:center;
+	cursor: pointer;
+}
+.camera_screen_open:hover{
+	 background-size: 80% 80%;
+}

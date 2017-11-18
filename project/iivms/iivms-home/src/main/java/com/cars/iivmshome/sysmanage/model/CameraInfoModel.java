@@ -257,4 +257,15 @@ public class CameraInfoModel {
     public void setLimitScanNums(Integer limitScanNums) {
         this.limitScanNums = limitScanNums;
     }
+    
+    
+    public String getRtspCamera(){
+    	StringBuffer sb = new StringBuffer("rtsp://");
+    	sb.append(this.getUsername()).append(":");
+    	sb.append(this.getPassword()).append("@");
+    	sb.append(this.getIp()).append(":");
+    	sb.append(this.getPort()).append("/h264/ch1/main/av_stream");
+    	
+    	return sb.toString();
+    }
 }

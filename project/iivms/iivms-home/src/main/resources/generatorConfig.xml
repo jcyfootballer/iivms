@@ -3,7 +3,7 @@
 <generatorConfiguration>
 <classPathEntry location="F:\ProgramFiles\apache-maven-3.5.0\repository\mysql\mysql-connector-java\5.1.14\mysql-connector-java-5.1.14.jar" />
   <context id="context1">
-    <jdbcConnection connectionURL="jdbc:mysql://192.168.1.23:3306/rail?useUnicode=true&amp;characterEncoding=utf-8" 
+    <jdbcConnection connectionURL="jdbc:mysql://192.168.253.10:3306/rail?useUnicode=true&amp;characterEncoding=utf-8" 
     driverClass="com.mysql.jdbc.Driver" password="123456" userId="root" />
 
        <!-- 生成模型的包名和位置 -->  

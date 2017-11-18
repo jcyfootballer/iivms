@@ -78,6 +78,8 @@ xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns
         <url-pattern>*.woff2</url-pattern>
         <url-pattern>*.vtt</url-pattern>
         <url-pattern>*.map</url-pattern>
+        <url-pattern>*.eot</url-pattern>
+        
 	</servlet-mapping>
 	<!-- 
 	<listener>

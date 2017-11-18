@@ -33,13 +33,13 @@ border:1px solid #ddd;
 cursor: pointer;
 }
 .splitscreen_now{
-background:#ff0000;
+background:#008aff;
 border:1px solid #ddd;
 cursor: pointer;
 }
 </style>
 </head>
-<body>
+<body >
 	<div class="container-fluid">
 		<!-- BEGIN PAGE HEADER-->
 		<div class="row">
@@ -65,8 +65,8 @@ cursor: pointer;
 						<hr style="height:1px;border:none;border-top:1px solid #555555;" />
 						<form class="form-horizontal"  id ="cameraForm" name="cameraForm">
 							<input type="hidden"  name="cameraId" value=""/>
-							<input type="hidden"  name="screen_nums" value="4"/>
-							<input type="hidden"  name="screen_now" value="1"/>
+							<input type="hidden"  name="screen_nums" value=""/>
+							<input type="hidden"  name="screen_now" value=""/>
 							  <div class="form-group">
 							    <label for="yuzhidian" class="col-sm-4 control-label">预置点：</label>
 							    <div class="col-sm-4">
@@ -91,43 +91,38 @@ cursor: pointer;
 			<div class="col-md-8 col-lg-9 col-sm-7">
 				<div class="screen">
 					 <table id="screenTable"class="table" style="margin-bottom:1px">
-					    <!-- <tr>
-						    <td class="splitscreen"></td>
-						    <td class="splitscreen"></td>
-					     </tr>
-					    <tr>
-						    <td class="splitscreen"></td>
-						    <td class="splitscreen"></td>
-					    </tr> -->
 					</table>
 				</div>
-				<div class="camera_bottom">
-				  <table class="table" style="margin-bottom:1px">
-				   <tbody>
+				  <table class="screenBtn table " style="margin-bottom:1px">
+				   <tbody >
 					    <tr>
-					      <td><img src="${ctx}/images/camera_icon1_sm.png" style="cursor: pointer" onClick="func(1)"/></td>
-					      <td><img src="${ctx}/images/camera_icon2_sm.png" style="cursor: pointer" onClick="func(2)"/></td>
-					      <td><img src="${ctx}/images/camera_icon3_sm.png" style="cursor: pointer" onClick="func(3)"/></td>
-					      <td><img src="${ctx}/images/camera_icon4_sm.png" style="cursor: pointer" onClick="func(4)"/></td>
-					      <td><img src="${ctx}/images/camera_icon5_sm.png" style="cursor: pointer" onClick="func(5)"/></td>
-					      <td><img src="${ctx}/images/camera_icon6_sm.png" style="cursor: pointer" onClick="func(6)"/></td>
-					      <td><img src="${ctx}/images/camera_icon7_sm.png" style="cursor: pointer" onClick="func(7)"/></td>
-					      <td><img src="${ctx}/images/camera_icon8_sm.png" style="cursor: pointer" onClick="func(8)"/></td>
-					      <td><img src="${ctx}/images/camera_icon9_sm.png" style="cursor: pointer" onClick="func(9)"/></td>
-					      <td><img src="${ctx}/images/camera_icon10_sm.png" style="cursor: pointer" onClick="func(10)"/></td>
-					      <td><img src="${ctx}/images/camera_icon11_sm.png" style="cursor: pointer" onClick="func(11)"/></td>
+					     <td><div class="camera_nomusic"></div></td>
+					     <td><div class="camera_music"></div></td>
+					     <td><div class="camera_printscreen"></div></td>
+					     <td><div class="camera_video"></div></td>
+					     <td><div class="camera_stop"></div></td>
+					     <td><div class="camera_stopall"></div></td>
+					     <td><div class="camera_screen_1" onClick="switchScreen(1)"></div></td>
+					     <td><div class="camera_screen_4" onClick="switchScreen(4)"></div></td>
+					     <td><div class="camera_screen_6" onClick="switchScreen(6)"></div></td>
+					     <td><div class="camera_screen_9" onClick="switchScreen(9)"></div></td>
+					     <td><div class="camera_screen_16" onClick="switchScreen(16)" ></div></td>
+					     <td><div class="camera_screen_open"></div></td>
+					     <td><div class=""></div></td>
+					     <td><div class=""></div></td>
 					    </tr>
 					  </tbody>
 				  </table>
 				</div>
 			</div>
-		</div>
 	</div>
-
+<!-- 
 <script type="text/javascript" src="${ctx}/js/vedio/video.min.js"></script>	
-<script type="text/javascript" src="${ctx}/js/vedio/videojs-flash.min.js"></script>	
+<script type="text/javascript" src="${ctx}/js/vedio/videojs-flash.min.js"></script>	 -->
+<script type="text/javascript" src="${ctx}/js/vlcScreen.js"></script>	
 <script>
 	    var treeObj;
+	    var screenTemplate;
 		jQuery(document).ready(function() { 
 			resizeWrapper();
 			var setting = {
@@ -160,14 +155,13 @@ cursor: pointer;
 			 setTimeout(function () { 
 				 var nodes = treeObj.getNodes();
 				 treeObj.expandNode( nodes[0], true, true, true);
-			 }, 50);
+			 }, 100);
 			
 			 $('#cameraseek').change(function() {
 				 alert( $(this).val());
 			 });
-			 
-			 initScreent(4);
-
+			 checkBrowser();
+			 screenTemplate = new ScreenTemplate($("#cameraForm"),4);
 		});
 		function resizeWrapper() {
 	    		//自适应高度
@@ -176,13 +170,14 @@ cursor: pointer;
 	    		var iframeOffsetTop = $(document).find("body").offset().top;
 	    		var blankH = clientH - iframeOffsetTop-370;
 	    		$(".treepanel").css("height", blankH);
-	    		$(".screen").css("height", clientH - iframeOffsetTop);
-	    		$(".splitscreen").css("height", $(".screen").height()/2-2);
+	    		$(".screen").css("height", clientH - iframeOffsetTop+20);
+	    		//$(".splitscreen").css("height", $(".screen").height()/2-2);
 	    		
 	    }
 		function zTreeOnClick(event, treeId, treeNode){
 			console.log(treeId+","+treeNode.tId + ", " + treeNode.id+","+treeNode.pId + ", " + treeNode.type);
-		  
+			document.cameraForm.cameraId.value=treeNode.id;
+			
 		}
 		function fun(ind){
 			console.log("设置点数："+$("#yuzhidian").val());
@@ -194,40 +189,48 @@ cursor: pointer;
 				console.log("删除");
 			}
 		}
-		function func(ind){
-			console.log(ind);
+		function switchScreen(ind){
+			screenTemplate.initScreen(ind);
 		}
-		
-		function initScreent(ind){
-			console.log("分屏数："+ind);
-			var  _4splitScreen= " <tr> <td class=\"splitscreen\" id=\"4_1\" onclick=\"locateScreen(this)\"></td><td class=\"splitscreen\" id=\"4_2\" onclick=\"locateScreen(this)\"></td></tr>"
-					+"<tr><td class=\"splitscreen\" id=\"4_3\" onclick=\"locateScreen(this)\"></td><td class=\"splitscreen\" id=\"4_4\" onclick=\"locateScreen(this)\"></td></tr>";
-
-			document.cameraForm.screen_nums.value=ind;
-			if(ind==4){
-				$("#screenTable").empty();
-				$("#screenTable").append(_4splitScreen);
-				resizeWrapper();
-			}
-		};
-				
-		
 		function locateScreen(obj){
 			console.log("当前屏幕:"+obj.id);
-			document.cameraForm.screen_now.value=obj.id;
-			var _videoStr="<video data-setup='{\"techOrder\": [\"html5\", \"flash\"]}' id=\"video_"+obj.id+"\" autoplay class=\"video-js vjs-default-skin vjs-fluid\" controls preload=\"none\">"
-			+"<source src='rtmp://live.hkstv.hk.lxdns.com/live/hks' type='rtmp/flv'><p class=\"vjs-no-js\">To view this video </p></video>"
-			if($(obj).hasClass('splitscreen_now')){
-				alert("一初始化");
-				return ;
+			var _screen_now = document.cameraForm.screen_now.value;
+			if(_screen_now==this.id){
+				return;
 			}
+			document.cameraForm.screen_now.value=this.id;
+			$(".splitscreen_now").removeClass("splitscreen_now");
+			$("#"+this.id).addClass("splitscreen_now");
+			var url = "rtsp://184.72.239.149/vod/mp4://BigBuckBunny_175k.mov"
 			
-			$(obj).append(_videoStr);
-			$(obj).addClass("splitscreen_now");
-			var player = videojs("video_"+obj.id, {  }, function () {
-		           console.log('Good to go!');
-		           this.play(); // if you don't trust axutoplay for some reason  
-		 	})
+			var cameraId = document.cameraForm.cameraId.value;
+			if(cameraId==''){
+					alert("请选择要查看的摄像头");
+					return ;
+			}	
+			
+			$.get("${ctx}/realtimepreview/vediomanage/"+cameraId,function(result) {
+				 if(200==result.status){
+					 var data = result.data;
+					 alert(data.cameraId);
+					 alert(data.rtsp);
+					 var html = screenTemplate.showVlcPlayer(this.id,data.rtsp);
+					 console.log(html)
+					 $("#"+this.id).append(html);
+	        	 }
+			}, "json");
+			
+			//var _videoStr="<video data-setup='{\"techOrder\": [\"html5\", \"flash\"]}' id=\"video_"+obj.id+"\" autoplay class=\"video-js vjs-default-skin vjs-fluid\" controls preload=\"none\">"
+			//+"<source src='rtmp://172.28.3.113:1935/live/livestream' type='rtmp/flv'><p class=\"vjs-no-js\">To view this video </p></video>"
+			
+			//var _videoStr="";
+			
+		//	$(obj).append(_videoStr);
+		//	$(obj).addClass("splitscreen_now");
+		//	var player = videojs("video_"+obj.id, {  }, function () {
+		           //console.log('Good to go!');
+		  //         this.play(); // if you don't trust axutoplay for some reason  
+		 //	})
 		}
 	</script>	
 </body>
